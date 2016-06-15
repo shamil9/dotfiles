@@ -1,0 +1,50 @@
+[
+  { "keys": ["super+alt+n"], "command": "advanced_new_file"},
+  { "keys": ["alt+1"], "command": "toggle_side_bar" },
+  { "keys": ["super+alt+l"], "command": "htmlprettify" },
+  { "keys": ["j", "j"], "command": "exit_insert_mode",
+    "context":
+    [
+        { "key": "setting.command_mode", "operand": false },
+        { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+
+ //Origami creation
+  { "keys": ["super+k", "s", "p"], "command": "create_pane", "args": {"direction": "down", "give_focus": true} },
+  { "keys": ["super+k", "v", "s", "p"], "command": "create_pane", "args": {"direction": "right", "give_focus": true} },
+  { "keys": ["super+k", "b", "d"], "command": "destroy_pane", "args": {"direction": "self"} },
+
+  //Origami navigation
+  { "keys": ["super+k", "k"], "command": "travel_to_pane", "args": {"direction": "up"} },
+  { "keys": ["super+k", "l"], "command": "travel_to_pane", "args": {"direction": "right"} },
+  { "keys": ["super+k", "j"], "command": "travel_to_pane", "args": {"direction": "down"} },
+  { "keys": ["super+k", "h"], "command": "travel_to_pane", "args": {"direction": "left"} },
+
+  //PHP Getters and Setters
+  { "keys": ["super+k", "g", "s"], "command": "php_generate_setters"},
+  { "keys": ["super+k", "g", "g"], "command": "php_generate_getters"},
+
+  //PHP Companion
+  {"keys": ["super+k", "i", "u"], "command": "find_use"},
+  { "keys": ["super+k", "i", "n"], "command": "import_namespace"},
+  {"keys": ["super+k", "g", "c"], "command": "insert_php_constructor_property"},
+
+  //Ctags
+  {"command": "navigate_to_definition", "keys": ["super+b"]},
+
+  //Bracket highliter
+  {
+    "keys": ["super+k", "s", "q"],
+    "command": "bh_key",
+    "args":
+    {
+      "lines" : true,
+      "plugin":
+      {
+        "type": ["single_quote", "double_quote", "py_single_quote", "py_double_quote"],
+        "command": "bh_modules.swapquotes"
+      }
+    }
+  },
+]

@@ -1,0 +1,5 @@
+imap jj <Esc>
+set relativenumber
+set showmode
+set number
+autocmd FocusLost * stopinsert | wall!
